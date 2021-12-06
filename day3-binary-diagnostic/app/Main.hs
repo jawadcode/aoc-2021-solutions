@@ -34,5 +34,5 @@ main = do
   let len = length numbers
       digits = getDigits numbers
       gamma = getGamma len digits
-      epsilon = gamma `xor` sum [1 `shiftL` x | x <- [0 .. (length (head numbers) - 1)]]
+      epsilon = xor gamma $ shiftL 1 (length (head numbers)) - 1
    in print $ gamma * epsilon
